@@ -1,0 +1,10 @@
+black==25.9.0
+Django==4.2.25
+django-filter==25.1
+django-import-export==4.3.12
+djangorestframework==3.16.1
+flake8==7.3.0
+flake8-isort==6.1.2
+isort==6.1.0
+pillow==11.3.0
+python-dotenv==1.2.1
