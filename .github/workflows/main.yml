@@ -24,3 +24,23 @@ jobs:
 
       - name: Test with flake8
         run: python -m flake8 .
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: tests
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            cd Dev
+            cd Python
+            git clone https://github.com/srgdevkz/drf_movies.git
+            cd drf_movies
+            python3.9 -m venv venv
+            source venv/bin/activate
+            python3.9 -m pip install --upgrade pip
+            pip install -r requirements.txt
