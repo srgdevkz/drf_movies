@@ -1,5 +1,5 @@
 black==25.9.0
-Django==4.2.25
+Django==4.2.26
 django-filter==25.1
 django-import-export==4.3.12
 djangorestframework==3.16.1
